@@ -50,7 +50,7 @@ jobs:
         pacboy: cc:p cmake:p ninja:p
     - uses: actions/checkout@v2
     - name: Generating Makefiles
-      run: cmake .
+      run: cmake --debug-output .
     - name: Compiling
       run: cmake --build .
     - name: Test
