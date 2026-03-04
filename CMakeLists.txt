@@ -28,8 +28,9 @@ endif()
 
 add_library(clip clip.cpp)
 
-target_include_directories(clip INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> 
-										  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+target_include_directories(clip INTERFACE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 target_compile_definitions(clip PRIVATE -DCLIP_BUILDING_LIB=1)
 if(BUILD_SHARED_LIBS)
   target_compile_definitions(clip PUBLIC -DCLIP_SHARED=1)
